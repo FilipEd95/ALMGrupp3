@@ -3,18 +3,15 @@ package com.example.almgrupp.model;
 public class Student {
     private Long id;
     private String name;
-    private String adress;
-    private String email;
     private String phoneNumber;
 
     public Student() {
 
     }
 
-    public Student(String name, String adress, String email, String phoneNumber) {
+    public Student(long id, String name, String phoneNumber) {
+        this.id = id;
         this.name = name;
-        this.adress = adress;
-        this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
@@ -34,21 +31,6 @@ public class Student {
         this.name = name;
     }
 
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -63,8 +45,6 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", adress='" + adress + '\'' +
-                ", email='" + email + '\'' +
                 ", phone number='" + phoneNumber + '\'' +
                 '}';
     }
