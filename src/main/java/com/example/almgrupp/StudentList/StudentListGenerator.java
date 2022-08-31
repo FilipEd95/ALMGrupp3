@@ -2,11 +2,12 @@ package com.example.almgrupp.StudentList;
 
 import com.example.almgrupp.model.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentListGenerator {
 
-    private static List<Student> studentList;
+    private static List<Student> studentList = new ArrayList<>();
 
 
 
