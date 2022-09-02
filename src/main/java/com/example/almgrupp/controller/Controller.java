@@ -13,10 +13,14 @@ import java.util.List;
 @RequestMapping(path="/demo")
 public class Controller {
 
-    private List<Student> students = StudentListGenerator.getStudentList();
+    private List<Student> students;
+
+    public Controller() {
+        this.students = StudentListGenerator.getStudentList();
+    }
 
     @RequestMapping("/add")
-    public String addNewKompis (@RequestParam Long id, @RequestParam String name, @RequestParam String phoneNumber) {
+    public String addNewStudent (@RequestParam Long id, @RequestParam String name, @RequestParam String phoneNumber) {
         Student s = new Student();
         s.setId(id);
         s.setName(name);
@@ -31,7 +35,7 @@ public class Controller {
     }
 
     @RequestMapping("/getByName")
-    public Student getFriendByName(@RequestParam String name){
+    public Student getStudentByName(@RequestParam String name){
         for (Student student: students) {
             if (student.getName().equals(name)){
                 return student;
@@ -41,7 +45,7 @@ public class Controller {
     }
 
     @RequestMapping("/getByNumber")
-    public Student getFriendByNumber(@RequestParam String number){
+    public Student getStudentByNumber(@RequestParam String number){
         for (Student student: students) {
             if (student.getPhoneNumber().equals(number)){
                 return student;
@@ -59,6 +63,14 @@ public class Controller {
             }
         }
         return "Could not delete student";
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
 }
