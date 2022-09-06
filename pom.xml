@@ -16,7 +16,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>ALMGrupp</artifactId>
+    <artifactId>almgrupp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ALMGrupp</name>
     <description>ALMGrupp</description>
